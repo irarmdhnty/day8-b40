@@ -64,23 +64,41 @@
                     </div>
                     <div>
                         <i class="fa-regular fa-lg fa-clock"></i>
-                        <span>{{ .Details.Start_date}} - {{ .Details.End_date }}</span>
+                        <span>{{ .Details.Duration }}</span>
                     </div>
                     <div class="mt-4">
                         <p class="fw-bold fs-4">Technologies</p>
                         <table>
+
+                            {{ range $index, $tech := .Details.Technologies }}
                             <tr>
+
+                                {{ if eq $tech "node-js" }}
                                 <td><i class="fa-brands fa-xl fa-node-js"></i></td>
                                 <td class="icon">Node Js</td>
+                                {{ end }}
+
+                                {{ if eq $tech "react" }}
                                 <td><i class="fa-brands fa-xl fa-react"></i></td>
                                 <td class="icon">React Native</td>
+                                {{ end }}
+
                             </tr>
                             <tr>
+
+                                {{ if eq $tech "laravel" }}
                                 <td><i class="fa-brands fa-xl fa-laravel"></i></td>
                                 <td class="icon">Laravel</td>
+                                {{ end }}
+
+                                {{ if eq $tech "golang" }}
                                 <td><i class="fa-brands fa-xl fa-golang"></i></td>
                                 <td class="icon">Golang</td>
+                                {{ end }}
+
                             </tr>
+                            {{ end }}
+
                         </table>
                     </div>
                 </div>
